@@ -108,8 +108,13 @@ def get_file_size_kindle(url):
     div = soup.find('div', {'id': 'detailBullets_feature_div'})
     ul = div.find('ul', {'class': 'a-unordered-list a-nostyle a-vertical a-spacing-none detail-bullet-list'})
     li = ul.find_all(lambda tag: tag.name == 'li' and not tag.attrs)
-    size_file = li[2].find('span', {'class': 'a-list-item'}).text.split()
-    return " ".join(size_file[4:])
+    size_file1 = li[2].find('span', {'class': 'a-list-item'}).text.split()
+    size_file2 = li[3].find('span', {'class': 'a-list-item'}).text.split()
+    test = li[0].find('span', {'class': 'a-list-item'}).text.split()
+    if 'ASIN' in test:
+        return " ".join(size_file2[4:])
+    else:
+        return " ".join(size_file1[4:])
 
 def get_item_dimension(url):
     soup = get_data_page(url)
@@ -270,18 +275,18 @@ def generate_my_items_table(items_urls):
 # Get the first search page
 
 recherche = 'livre recette minceur'
-url = "https://www.amazon.fr/s?k={}".format('+'.join(recherche.split()))
+url = "https://www.amazon.fr/s?k={}&i=stripbooks&__mk_fr_FR=%C3%85M%C3%85%C5%BD%C3%95%C3%91&ref=nb_sb_noss_1".format('+'.join(recherche.split()))
 soup = get_data_page(url)
 items_url = get_items_urls_from_all_pages(url)
-table = generate_my_items_table(items_url[:15])
+table = generate_my_items_table(items_url[:700])
 
 books = pd.DataFrame(table, columns=['Titres', '[Formats, Prix]', 'Nombre de pages Format Broché', 'Taille du fichier Kindle' ,'Nombre de pages Format Poche', 'Nombre de pages Format Relié', 'Dimensions Format Broché', 'Dimensions Format Poche', 'Dimensions Format Relié', 'Evaluations (sur 5)', 'Nombre d\'évaluations', 'Liens' ])
-books.to_csv('test1.csv')
+books.to_csv('makers_project1.csv')
 
 
 # Test
 '''
-url = 'https://www.amazon.fr/dp/276195372X/ref=sspa_dk_detail_2?psc=1&pd_rd_i=276195372Xp13NParams&spLa=ZW5jcnlwdGVkUXVhbGlmaWVyPUE1UDdXNFIyT0VLN00mZW5jcnlwdGVkSWQ9QTA2MDE2MTYzMjJKTUw3Vlk0RkdPJmVuY3J5cHRlZEFkSWQ9QTAyNTMwNDlDRktOWkdMVkFTQzEmd2lkZ2V0TmFtZT1zcF9kZXRhaWwyJmFjdGlvbj1jbGlja1JlZGlyZWN0JmRvTm90TG9nQ2xpY2s9dHJ1ZQ=='
+url = 'https://www.amazon.fr/Recettes-light-inratables-cuiseur-Inratables-ebook/dp/B07MM614F5/ref=tmm_kin_swatch_0?_encoding=UTF8&qid=1618672111&sr=1-27'
 soup = get_data_page(url)
-print(get_item_number_of_page(url))
+print(get_file_size_kindle(url))
 '''
