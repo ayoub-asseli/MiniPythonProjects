@@ -19,13 +19,13 @@ roman_numbers = {
     "M": 1000,
 }
 
-#Entry from user
+# Entry from user
 user = input("Enter your Roman numbers: ")
 n = len(user)
 
 ########################################################################################################################
 
-#Validation process: Is the number valid ?
+# Validation process: Is the number valid ?
 
 # Rule 1 ?
 for i in range(n-3):
@@ -54,7 +54,7 @@ for i in range(n-1):
         print("\nEnter a valid Roman Numerals please....")
         exit()
 
-#Rule 6
+# Rule 6 ?
 if len(user) > 2:
     for i in range(2, n):
         if user[i] == "X" and len([j for j in user[:i-1] if j in "VI"]) > 0:
@@ -73,12 +73,12 @@ if len(user) > 2:
             print("\nEnter a valid Roman Numerals please....")
             exit()
 
+########################################################################################################################
+
 # Variables
 res = 0
 values = [roman_numbers.get(x) for x in user]
 n = len(values)
-
-########################################################################################################################
 
 # Converting process (Rule 4 & 5)
 for i in range(n-1):
