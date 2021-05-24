@@ -7,7 +7,7 @@ for i in range(100):
 #player
 player = int(input("What do you think the number is ? "))
 
-#You set the maximum number of trial
+#Set the maximum number of trial
 max_trial = 10
 
 #Game process
