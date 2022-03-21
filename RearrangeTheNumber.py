@@ -12,4 +12,4 @@ def rearrange_the_number(number):
 	permutations = list(map(lambda x: int(''.join(x)) ,itertools.permutations(str(number))))
 	return max(permutations) - min(permutations)
 
-#print(rearrange_the_number(12282121212))
+print(rearrange_the_number(12282121212))
