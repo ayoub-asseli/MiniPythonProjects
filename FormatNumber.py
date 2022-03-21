@@ -18,3 +18,7 @@ def format_number(number):
 	if new_number[0] == ',':
 		new_number = new_number[1:]
 	return new_number
+
+L = [19029229, 100000, 275820091911002, 50356289]
+for num in L:
+	print(format_number(num))
