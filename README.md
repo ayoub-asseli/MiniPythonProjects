@@ -6,6 +6,6 @@
 <p> Ressources: </p>
 <ul>
   <li> <a href="https://www.codecademy.com/resources/blog/advanced-python-code-challenges/"> 10 Advanced Python Challenges </a> </li>
-  <li> <a href="https://pythonprinciples.com/challenges/">  Python Programming Challenges </a> </li>
   <li> <a href="https://edabit.com/challenges/python3">  Edabit </a> </li>
+  <li> <a href="https://pythonprinciples.com/challenges/">  Python Programming Challenges </a> </li>
 </ul>
