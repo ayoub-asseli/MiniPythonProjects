@@ -17,7 +17,7 @@ def ascending(txt):
     n = len(txt)
     for i in range(2, n-2):
         sub, sub_size = n, n//i
-        res = list(map(lambda x: int(x), [txt[i:i+sub_size] for i in range(0, sub, sub_size)]))
-        if res[-1] - res[0] == len(res)-1:
+        res = [txt[i:i+sub_size] for i in range(0, sub, sub_size)]
+        if int(res[-1]) - int(res[0]) == len(res)-1:
             return True
     return False
