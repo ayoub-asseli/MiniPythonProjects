@@ -73,9 +73,6 @@ if len(user) > 2:
             print("\nEnter a valid Roman Numerals please....")
             exit()
 
-########################################################################################################################
-
-# Variables
 res = 0
 values = [roman_numbers.get(x) for x in user]
 n = len(values)
