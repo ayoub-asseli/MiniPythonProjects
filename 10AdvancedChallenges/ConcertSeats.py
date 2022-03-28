@@ -27,7 +27,6 @@ def can_see_stage(M):
     n = len(M)
     for i in range(n):
         for j in range(n-1):
-            print(M[j][i], M[j+1][i])
             if M[j][i] >= M[j+1][i]:
                 return False
     return True
