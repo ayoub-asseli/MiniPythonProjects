@@ -22,9 +22,7 @@ Notes:
 """
 
 def id_mtrx(n):
-    try:
-        res = n + 1
-    except:
+    if type(n) != int:
         return 'Error'
     M = []
     for i in range(abs(n)):
