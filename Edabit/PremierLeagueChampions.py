@@ -42,6 +42,4 @@ def champions(teams):
         points = 3 * team['wins'] + team['draws']
         goal_diff = team['scored'] - team['conceded']
         L.append((points, goal_diff, name))
-    L = sorted(L)
-    print(L)
-    return L[-1][2]
+    return sorted(L)[-1][2]
