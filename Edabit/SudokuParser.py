@@ -60,7 +60,7 @@ class Sudoku:
                 else:
                     l3.append(board[i][j])
             i += 1
-            if len(l1) == 9:
+            if len(l1) == w:
                 L.append(l1)
                 L.append(l2)
                 L.append(l3)
