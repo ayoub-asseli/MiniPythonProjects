@@ -15,8 +15,6 @@ get_sqr([n, m]): will return the square in position n if only one argument is gi
                  belongs to if two arguments are given.
 """
 
-
-
 class Sudoku:
 
     def __init__(self, str2parse):
@@ -47,12 +45,11 @@ class Sudoku:
 
     def get_sqr(self, n, m=None):
         board = self.board()
-        w = len(board)
         l1, l2, l3 = [], [], []
         i=0
         L = []
-        while i < w:
-            for j in range(w):
+        while i < 9:
+            for j in range(9):
                 if j < 3:
                     l1.append(board[i][j])
                 elif j < 6:
@@ -60,31 +57,31 @@ class Sudoku:
                 else:
                     l3.append(board[i][j])
             i += 1
-            if len(l1) == w:
+            if len(l1) == 9:
                 L.append(l1)
                 L.append(l2)
                 L.append(l3)
                 l1, l2, l3 = [], [], []
         if m == None:
-            return L[n]
+            return L
         else:
             if m < 3 and n < 3:
                 return L[0]
-            elif m >= 3 and m < 6 and n < 3:
+            elif (m >= 3 and m < 6) and n < 3:
                 return L[1]
-            elif m >= 6 and m < 9 and n < 3:
+            elif (m >= 6 and m < 9) and n < 3:
                 return L[2]
-            elif m < 3 and n >= 3 and n < 6:
+            elif (m < 3 and n >= 3) and n < 6:
                 return L[3]
-            elif m >= 3 and m < 6 and n >= 3 and n < 6:
+            elif (m >= 3 and m < 6 and n >= 3) and n < 6:
                 return L[4]
-            elif m >= 6 and m < 9 and n >= 3 and n < 6:
+            elif (m >= 6 and m < 9) and (n >= 3 and n < 6):
                 return L[5]
-            elif m < 3 and n >= 6 and n < 9:
+            elif m < 3 and (n >= 6 and n < 9):
                 return L[6]
-            elif m >= 3 and m < 6 and n >= 6 and n < 9:
+            elif (m >= 3 and m < 6) and (n >= 6 and n < 9):
                 return L[7]
-            elif m >= 6 and m < 9 and n >= 6 and n < 9:
+            elif (m >= 6 and m < 9) and (n >= 6 and n < 9):
                 return L[8]
            
           
