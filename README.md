@@ -1,4 +1,4 @@
-### Small Python Projects
+### Python Coding Problems
 
 <p> These small advanced challenges will allow you to considerably improve your programming skills in Python. </p>
 <p> You will find in this repo my solutions. </p>
