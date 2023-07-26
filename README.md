@@ -1,7 +1,7 @@
 ### Small Python Projects
 
-<p> These small advanced projects will allow you to considerably improve your programming skills in Python. </p>
-<p> You will find in this repo my solutions to the different problems. </p>
+<p> These small advanced challenges will allow you to considerably improve your programming skills in Python. </p>
+<p> You will find in this repo my solutions. </p>
 
 <p> Ressources: </p>
 <ul>
